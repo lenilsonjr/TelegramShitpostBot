@@ -3,7 +3,7 @@ require 'telegram/bot'
 require 'dotenv/load'
 require File.expand_path('bot_controller.rb', File.dirname(__FILE__))
 
-class HealthBot < Rack::App
+class ShitpostBot < Rack::App
 
   bot = Telegram::Bot::Client.new(ENV['TELEGRAM_TOKEN'])
   mount Telegram::Bot::Middleware.new(bot, BotController), to: "/robot"
@@ -17,4 +17,4 @@ class HealthBot < Rack::App
 
 end
 
-run HealthBot
+run ShitpostBot
